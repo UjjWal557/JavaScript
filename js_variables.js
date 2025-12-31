@@ -10,6 +10,35 @@ console.log(x);
 console.log(y);
 console.log(z);
 
+// Demonstrating the use of let, var and const
+
+var a1= 10;
+console.log(a1); // Outputs: 10
+var a1= 20; // No error, redeclaration allowed with var
+console.log(a1); // Outputs: 20
+
+let b1= 15;
+console.log(b1); // 15
+//let b1=23; // Error, 'let' does not allow redeclaration, but allows reassignment
+b1=25; // No error, as reassignment is allowed
+console.log(b1); // 25
+
+const c1= 5.5;
+console.log(c1); // 5.5
+
+//const c1=7.7; // Error, 'const' does not allow redeclaration
+//c1=8.8; // Error, 'const' does not allow reassignment
+
+
+//Hoisting Behavior 
+
+console.log(p); // undefined [due to hoisting] (output appears only when the variable is declared with var, if not declared, it gives Reference Error)
+var p = 30;
+
+console.log(q); // ReferenceError, as 'let' and 'const' are not hoisted in the same way
+let q = 40;
+
+
 /* Scope of let and var */
 
 function check()
