@@ -30,6 +30,7 @@ else
 }
 
 //switch statement
+
 let day = 3;
 let dayName;
 switch (day) {
