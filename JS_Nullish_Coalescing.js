@@ -18,7 +18,6 @@ console.log( d ?? "No Proper Value"); // Output: 0
 console.log( e ?? "No Proper Value"); // Output: hello
 
 // Working with (||) OR operator instead of (??) Nullish Coalescing operator
-
 // [ The OR operator considers all falsy values (null, undefined, 0, "", false) as false and returns the default value ]
 
 console.log( a || "No Proper Value"); // Output: No Proper Value
