@@ -91,4 +91,69 @@ console.log(arr_exp); // (5) ['abc', 'bcd', 'ef', 'z', 'wxyz']
 let res2 = arr_exp.some(i => i.length<3);
 console.log(res2); // true --> as at least one element satisfies the condition
 
-// Includes
+// Includes  --> It checks the presence of the array element and returns boolean value 
+console.log(exp);
+console.log(exp.includes(3)); // true
+console.log(exp.includes(1)); // false
+
+// Sort
+let ex1 = ['i','e','a','u','o'];
+let ex2 = [4,1,100,12,3,50,5,9.8];
+console.log(ex1.sort()); // (5) ['a', 'e', 'i', 'o', 'u']
+console.log(ex2.sort()); // (8) [1, 100, 12, 3, 4, 5, 50, 9.8]
+
+/*
+sort() methods works properly only for string array because it sorts the elements 
+in Lexicographical order (or dictionary order), and for non-string elements, 
+it converts them into string and then sorts them as for 100 and 3, in string '100'
+and '3', '1' comes first than '3', so '100' is placed before '3'.
+*/
+
+/* To resolve this issue, we can use:
+1. Compare Function
+2. Arrow Function */
+
+// Compare function:
+function compare(a,b)
+{
+    return a-b;
+}
+console.log(ex2.sort(compare)); // (8) [1, 3, 4, 5, 9.8, 12, 50, 100]
+
+/* Idea for Sorting:
+Return Value                Task
+    <0                  Put a before b
+    >0                  Put a after b
+    =0                  Keep order unchanged
+*/
+
+// Arrow Function: 
+let ex = [4,1,100,12,3,50,5,9.8];
+ex.sort((a,b)=>a-b);
+console.log(ex);
+
+// Split --> It is a String method that returns an array; arrays do not have split().
+// Syntax: string.split(separator, limit);
+let str = "Hello, It's a Sunny Day";
+let split_array = str.split(" ");
+console.log(split_array); // (5) ['Hello,', "It's", 'a', 'Sunny', 'Day']
+let split_array1 = str.split(",");
+console.log(split_array1); // (2) ['Hello', " It's a Sunny Day"]
+
+// Join: It converts an array into a string
+// Syntax: array.join(separator);
+
+console.log(split_array); // (5) ['Hello,', "It's", 'a', 'Sunny', 'Day']
+let array_join = split_array.join(" ");
+console.log(array_join); // Hello, It's a Sunny Day
+console.log(typeof array_join); // string
+
+// Split and join together
+let str_exp =  "Hello World";
+console.log(str_exp.split(' ').join('-')); // Hello-World
+// Reverse: It reverses an array, not a string
+console.log(split_array); // (5) ['Hello,', "It's", 'a', 'Sunny', 'Day']
+console.log(split_array.reverse()); // (5) ['Day', 'Sunny', 'a', "It's", 'Hello,']
+
+let new_arr = [2,5,7,8,1,0];
+console.log(new_arr.reverse()); // (6) [0, 1, 8, 7, 5, 2]
