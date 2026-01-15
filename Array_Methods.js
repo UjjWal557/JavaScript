@@ -139,6 +139,8 @@ let split_array = str.split(" ");
 console.log(split_array); // (5) ['Hello,', "It's", 'a', 'Sunny', 'Day']
 let split_array1 = str.split(",");
 console.log(split_array1); // (2) ['Hello', " It's a Sunny Day"]
+let split_char = str.split(""); // Splits the string into single characters
+console.log(split_char); // (23) ['H', 'e', 'l', 'l', 'o', ',', ' ', 'I', 't', "'", 's', ' ', 'a', ' ', 'S', 'u', 'n', 'n', 'y', ' ', 'D', 'a', 'y']
 
 // Join: It converts an array into a string
 // Syntax: array.join(separator);
@@ -157,3 +159,17 @@ console.log(split_array.reverse()); // (5) ['Day', 'Sunny', 'a', "It's", 'Hello,
 
 let new_arr = [2,5,7,8,1,0];
 console.log(new_arr.reverse()); // (6) [0, 1, 8, 7, 5, 2]
+
+//console.log(str_exp.reverse()); // doesn't work as str_exp is not an array
+
+// to reverse a string
+let newStr = str_exp.split("").reverse().join("");
+console.log(newStr); // dlroW olleH
+
+// Example For Palindrome
+function check(str_exp)
+{
+    let reversedStr= str_exp.split('').reverse().join('');
+    return (str_exp==reversedStr)?true:false;
+}
+check("madam")?console.log("Palindrome"):console.log("Not a Palindrome"); // Palindrome
