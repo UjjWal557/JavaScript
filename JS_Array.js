@@ -25,7 +25,3 @@ for (let i in arr)
 {
     console.log(arr[i]);
 }
-
-
-//------------------------------------------------------
-// Array Methods
