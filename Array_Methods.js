@@ -31,6 +31,33 @@ console.log(arr.pop()); // (3) [2, 3, 4]
 console.log(arr); // (6) ['a', 'b', 'c', 'd', 'e', 1]
 console.log(arr.pop('c')); // 1 --> pop just removes the last element and takes no argument or ignores the argument passed 
 
+//{ If an array is empty and pop is used on it, the pop method will return undefined }
+let ar=[]; // empty array
+console.log(ar.pop()); // undefined
+
 // Shift --> It removes the first element
 console.log(arr);
 console.log(arr.shift()); // a
+
+// Splice --> It removes, adds, replaces the element
+// syntax: array_name.splice(starting index, number of elements, element1, element2,...);
+
+//remove elements 
+let x = ['a','b','c'];
+console.log(x.splice(-2,2)); // (2) ['b', 'c'] --> removes 2 element from index -2
+console.log(x); // (1) ['a']
+
+// add elements
+x.splice(1,0,'e','f','g'); // remove 0 element, and add the given elements
+console.log(x); // (4) ['a', 'e', 'f', 'g']
+
+// replace
+x.splice(2,3,'i','o','u'); //--> from index 2, replace given elements, 'u' is inserted as no element is available to replace
+console.log(x);
+
+// Slice --> It return a new array(sub array) 
+// syntax : array.slice(start, end)
+
+console.log(x); // (5) ['a', 'e', 'i', 'o', 'u']
+let Arr = x.slice(-3,3); // takes element of index -3
+console.log(Arr); // (1) ['i']
