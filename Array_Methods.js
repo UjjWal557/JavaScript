@@ -53,7 +53,7 @@ console.log(x); // (4) ['a', 'e', 'f', 'g']
 
 // replace
 x.splice(2,3,'i','o','u'); //--> from index 2, replace given elements, 'u' is inserted as no element is available to replace
-console.log(x);
+console.log(x); // (5) ['a', 'e', 'i', 'o', 'u']
 
 // Slice --> It return a new array(sub array) 
 // syntax : array.slice(start, end)
@@ -61,3 +61,34 @@ console.log(x);
 console.log(x); // (5) ['a', 'e', 'i', 'o', 'u']
 let Arr = x.slice(-3,3); // takes element of index -3
 console.log(Arr); // (1) ['i']
+
+// Other Methods
+// Map
+console.log(x); // (5) ['a', 'e', 'i', 'o', 'u']
+let y = x.map(val => val.toUpperCase());  // --> if the array consists numeric element, the map method will return TypeError
+console.log(y); // (5) ['A', 'E', 'I', 'O', 'U']
+
+// Filter
+
+let arr_exp = ['abc', 'bcd', 'ef', 'z', 'wxyz'];
+let result = arr_exp.filter(val => val.length>2);
+console.log(result); // (3) ['abc', 'bcd', 'wxyz']
+
+// Reduce --> It is used to reduce the array into a single value
+// Syntax: array.reduce((accumulator, current_value)=>new_value, initial_value);
+
+// always provide the initial value according to the requirement 
+
+let exp = [2,3,4,5];
+let res = exp.reduce((i,j)=> i+j**2,0); // --> sum of the square of the elements of the array
+let res1 = exp.reduce((i,j)=> i+j,0); // --> Sum of the elements
+console.log(res); // 54
+console.log(res1); // 14
+
+// Some --> It is used to check if some array passes a test. It returns a boolean value.
+
+console.log(arr_exp); // (5) ['abc', 'bcd', 'ef', 'z', 'wxyz']
+let res2 = arr_exp.some(i => i.length<3);
+console.log(res2); // true --> as at least one element satisfies the condition
+
+// Includes
