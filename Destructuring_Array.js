@@ -37,4 +37,4 @@ console.log(username); // abc
 console.log(gender); // Male
 console.log(usercity); // Biratnagar 
 console.log(userstreet); // 101
-console.log(age); // Reference Error as it's not defined above
+console.log(age); // Reference Error, as it's not defined above
