@@ -12,7 +12,8 @@ let car = {
         console.log("Object ends.");
     }
 };
-console.log(car.info()); // Best car to ride on.
+console.log(car.info()); // Best car to ride on. --> Use console if the function has return type
+car.check(); // Object ends. --> directly call the function using the dot operator
 
 // 'in' operator --> checks if the key is present in the object and returns boolean value  
 let res = 'check' in car;
