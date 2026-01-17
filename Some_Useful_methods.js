@@ -33,3 +33,32 @@ var printFunc2= demo3.printFunc.bind(demo3);
    //using bind() 
    // bind() takes the object "demo3" as parameter
 printFunc2(); // ABC
+
+//Other example
+var obj1 = {
+name : "ABC",
+article: "C++"
+}
+
+var obj2 = {
+name : "CDE",
+article: "JAVA"
+}
+  
+var obj3 = {
+name : "IJK",
+article: "C#"
+}
+
+function printVal(){
+   console.log(this.name+" knows "+this.article);
+   }
+      
+var printFunc2= printVal.bind(obj1);
+printFunc2(); // ABC knows C++
+  
+var printFunc3= printVal.bind(obj2);
+printFunc3(); // CDE knows JAVA
+  
+var printFunc4= printVal.bind(obj3);
+printFunc4(); // IJK knows C#
